@@ -1,4 +1,3 @@
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
@@ -18,61 +17,60 @@ const Index = () => {
 
   const planos = [
     {
-      nome: "Básico",
-      preco: "R$ 97/mês",
-      recursos: [
-        "1 número",
-        "1000 mensagens/mês",
-        "Automação básica",
-        "Suporte por email"
-      ]
+      nome: "PLANO MENSAL",
+      icon: "🎯",
+      precoOriginal: "R$49,90",
+      precoParcelado: "3 x de R$ 8,78",
+      precoAVista: "R$ 24,90",
+      precoMensal: "R$ 24,90/mês",
+      link: "https://abrir.link/pTBtE"
     },
     {
-      nome: "Profissional",
-      preco: "R$ 197/mês",
+      nome: "PLANO SEMESTRAL",
+      icon: "🔥",
+      precoOriginal: "R$199,90",
+      precoParcelado: "12 x de R$ 9,97",
+      precoAVista: "R$ 99,90",
+      precoMensal: "R$ 16,65/mês",
       destaque: true,
-      recursos: [
-        "3 números",
-        "5000 mensagens/mês",
-        "Automação avançada",
-        "API REST",
-        "Suporte prioritário"
-      ]
+      link: "https://abrir.link/xzKBi"
     },
     {
-      nome: "Empresarial",
-      preco: "R$ 497/mês",
-      recursos: [
-        "10 números",
-        "Mensagens ilimitadas",
-        "Automação personalizada",
-        "API dedicada",
-        "Suporte 24/7",
-        "Servidor dedicado"
-      ]
+      nome: "PLANO ANUAL",
+      icon: "⭐",
+      precoOriginal: "R$299,90",
+      precoParcelado: "12 x de R$ 17,95",
+      precoAVista: "R$ 179,90",
+      precoMensal: "R$ 14,99/mês",
+      link: "https://abrir.link/jkPVl"
+    },
+    {
+      nome: "PLANO DE 2 ANOS",
+      icon: "🤑",
+      precoOriginal: "R$499,90",
+      precoParcelado: "12 x de R$ 29,84",
+      precoAVista: "R$ 299,00",
+      precoMensal: "R$ 12,45/mês",
+      link: "https://abrir.link/uYnkD"
     }
   ];
 
   const tutoriais = [
     {
-      titulo: "Começando com o DarkVoice",
-      duracao: "5 min",
-      descricao: "Aprenda os conceitos básicos e configure sua primeira automação."
+      titulo: "Instalando a Extensão",
+      duracao: "2 min",
+      descricao: "Instale a extensão DarkVoice no seu navegador.",
+      link: "https://chrome.google.com/webstore/detail/darkvoice"
     },
     {
-      titulo: "Configurando Fluxos Automáticos",
-      duracao: "8 min",
-      descricao: "Crie fluxos de mensagens baseados em gatilhos e condições."
+      titulo: "Recebendo sua Chave",
+      duracao: "1 min",
+      descricao: "Verifique seu email para receber sua chave de ativação."
     },
     {
-      titulo: "Integrações Avançadas",
-      duracao: "12 min",
-      descricao: "Conecte o DarkVoice com suas ferramentas favoritas."
-    },
-    {
-      titulo: "Relatórios e Análises",
-      duracao: "6 min",
-      descricao: "Aprenda a interpretar as métricas e otimizar suas campanhas."
+      titulo: "Ativando no WhatsApp",
+      duracao: "2 min",
+      descricao: "Insira sua chave de ativação no campo especial do WhatsApp."
     }
   ];
 
@@ -141,7 +139,7 @@ const Index = () => {
       </section>
 
       {/* Tutoriais Section */}
-      <section className="py-24 bg-black/30">
+      <section id="tutorial" className="py-24 bg-black/30">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -149,24 +147,34 @@ const Index = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-4xl font-bold mb-12 gradient-text text-center">
-              Tutoriais
+              Tutorial de Instalação
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {tutoriais.map((tutorial, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass-card p-6 hover:border-primary transition-colors cursor-pointer group"
+                  className="glass-card p-6"
                 >
                   <div className="flex items-start gap-4">
-                    <PlayCircle className="text-primary w-8 h-8 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                    <PlayCircle className="text-primary w-8 h-8 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">{tutorial.titulo}</h3>
                       <p className="text-gray-400 mb-2">{tutorial.descricao}</p>
                       <span className="text-sm text-primary">{tutorial.duracao}</span>
+                      {tutorial.link && (
+                        <a
+                          href={tutorial.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block mt-4 text-primary hover:underline"
+                        >
+                          Acessar Extensão →
+                        </a>
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -177,7 +185,7 @@ const Index = () => {
       </section>
 
       {/* Preços Section */}
-      <section className="py-24">
+      <section id="precos" className="py-24">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -188,7 +196,7 @@ const Index = () => {
               Planos e Preços
             </h2>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {planos.map((plano, index) => (
                 <motion.div 
                   key={index}
@@ -201,22 +209,44 @@ const Index = () => {
                 >
                   {plano.destaque && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary px-4 py-1 rounded-full text-sm">
-                      Mais Popular
+                      Mais Assinado
                     </div>
                   )}
-                  <h3 className="text-2xl font-bold mb-2">{plano.nome}</h3>
-                  <p className="text-3xl font-bold mb-6 gradient-text">{plano.preco}</p>
-                  <ul className="space-y-3">
-                    {plano.recursos.map((recurso, idx) => (
-                      <li key={idx} className="flex items-center gap-2">
-                        <Check className="text-primary" size={16} />
-                        <span className="text-gray-300">{recurso}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <button className="w-full mt-6 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors">
-                    Começar Agora
-                  </button>
+                  <h3 className="text-2xl font-bold mb-2 gradient-text">
+                    {plano.icon} {plano.nome}
+                  </h3>
+                  <div className="space-y-2 mb-6">
+                    <p className="text-gray-400 line-through">{plano.precoOriginal}</p>
+                    <p className="text-lg font-semibold">{plano.precoParcelado}</p>
+                    <p className="text-white">ou {plano.precoAVista} à vista</p>
+                    <p className="text-primary font-bold">{plano.precoMensal}</p>
+                  </div>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-2">
+                      <Check className="text-primary" size={16} />
+                      <span className="text-gray-300">Até 10 números</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="text-primary" size={16} />
+                      <span className="text-gray-300">Disparos ilimitados</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="text-primary" size={16} />
+                      <span className="text-gray-300">Funis ilimitados</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="text-primary" size={16} />
+                      <span className="text-gray-300">Suporte 24/7</span>
+                    </div>
+                  </div>
+                  <a 
+                    href={plano.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full block text-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors"
+                  >
+                    Comprar Agora
+                  </a>
                 </motion.div>
               ))}
             </div>
@@ -357,4 +387,3 @@ const Index = () => {
 };
 
 export default Index;
-
