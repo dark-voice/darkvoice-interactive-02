@@ -37,15 +37,23 @@ export const Header = () => {
                 to={item.to}
                 spy={true}
                 smooth={true}
+                offset={-64}
                 duration={500}
                 className="text-gray-300 hover:text-white transition-colors cursor-pointer"
               >
                 {item.title}
               </ScrollLink>
             ))}
-            <button className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors">
+            <ScrollLink
+              to="contato"
+              spy={true}
+              smooth={true}
+              offset={-64}
+              duration={500}
+              className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors cursor-pointer"
+            >
               Começar Agora
-            </button>
+            </ScrollLink>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -67,6 +75,7 @@ export const Header = () => {
                   to={item.to}
                   spy={true}
                   smooth={true}
+                  offset={-64}
                   duration={500}
                   className="text-gray-300 hover:text-white transition-colors cursor-pointer"
                   onClick={() => setIsMenuOpen(false)}
@@ -74,12 +83,17 @@ export const Header = () => {
                   {item.title}
                 </ScrollLink>
               ))}
-              <button
-                className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors inline-block text-center"
+              <ScrollLink
+                to="contato"
+                spy={true}
+                smooth={true}
+                offset={-64}
+                duration={500}
+                className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors text-center cursor-pointer"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Começar Agora
-              </button>
+              </ScrollLink>
             </div>
           </nav>
         )}
