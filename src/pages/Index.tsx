@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { Demo } from "@/components/Demo";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const { scrollYProgress } = useScroll();
@@ -18,6 +19,7 @@ const Index = () => {
       <Hero />
       <Features />
       <Demo />
+      <Footer />
     </div>
   );
 };
