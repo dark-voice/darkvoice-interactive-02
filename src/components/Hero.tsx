@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Sparkles, MessageSquare } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -34,9 +34,15 @@ export const Hero = () => {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <button className="px-8 py-3 rounded-lg bg-primary hover:bg-primary/90 text-white font-medium transition-all">
+            <a 
+              href="https://wa.me/5541995030689" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-primary hover:bg-primary/90 text-white font-medium transition-all"
+            >
+              <MessageSquare className="w-5 h-5" />
               Começar Agora
-            </button>
+            </a>
             <button className="px-8 py-3 rounded-lg glass-card hover:bg-white/10 font-medium transition-all">
               Ver Demo
             </button>
