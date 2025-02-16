@@ -16,16 +16,16 @@ export const Hero = () => {
         >
           <div className="inline-flex items-center justify-center px-4 py-2 mb-8 rounded-full glass-card">
             <Sparkles className="w-4 h-4 mr-2 text-primary" />
-            <span className="text-sm font-medium">Automation Made Beautiful</span>
+            <span className="text-sm font-medium">Automação Inteligente</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
-            Transform Your Workflow
-            <br /> with DarkVoice
+            Transforme seu Fluxo de Trabalho
+            <br /> com DarkVoice
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Streamline your daily tasks with intelligent automation. Experience the future of productivity today.
+            Automatize suas tarefas diárias com inteligência. Experimente o futuro da produtividade hoje.
           </p>
           
           <motion.div
@@ -35,10 +35,10 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <button className="px-8 py-3 rounded-lg bg-primary hover:bg-primary/90 text-white font-medium transition-all">
-              Get Started
+              Começar Agora
             </button>
             <button className="px-8 py-3 rounded-lg glass-card hover:bg-white/10 font-medium transition-all">
-              Watch Demo
+              Ver Demo
             </button>
           </motion.div>
         </motion.div>

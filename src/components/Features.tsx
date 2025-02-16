@@ -1,47 +1,63 @@
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
-import { Bot, Zap, Shield, Clock } from "lucide-react";
+import { Bot, Zap, Shield, Clock, Users, Calendar, MessageSquare, Database, Moon, CheckCircle } from "lucide-react";
 
 const features = [
   {
-    icon: Bot,
-    title: "Intelligent Automation",
-    description: "Advanced AI algorithms learn and adapt to your workflow patterns.",
+    icon: Users,
+    title: "5 Números Simultaneamente",
+    description: "Utilize até 5 números diferentes ao mesmo tempo para suas automações.",
   },
   {
     icon: Zap,
-    title: "Lightning Fast",
-    description: "Blazing fast performance with minimal system resource usage.",
+    title: "Uso Ilimitado",
+    description: "Sem limites de mensagens ou automações. Use quanto precisar.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Modo Campanha",
+    description: "Realize disparos em massa de forma organizada e eficiente.",
+  },
+  {
+    icon: Bot,
+    title: "Flows Condicionais",
+    description: "Crie fluxos de resposta personalizados baseados em condições.",
+  },
+  {
+    icon: Calendar,
+    title: "Agendamento",
+    description: "Agende suas mensagens e automações para qualquer momento.",
   },
   {
     icon: Shield,
-    title: "Secure & Private",
-    description: "Your data stays private with end-to-end encryption.",
+    title: "Backups Automáticos",
+    description: "Seus dados sempre seguros com backups automáticos.",
   },
   {
-    icon: Clock,
-    title: "Time-Saving",
-    description: "Automate repetitive tasks and focus on what matters.",
+    icon: Moon,
+    title: "Tema Escuro",
+    description: "Interface adaptada para uso noturno, reduzindo o cansaço visual.",
+  },
+  {
+    icon: Database,
+    title: "Gestão de Funis",
+    description: "Organize e gerencie seus funis de venda de forma eficiente.",
   },
 ];
 
 export const Features = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
 
   return (
     <section ref={containerRef} className="py-32 relative">
       <div className="section-container">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            Powerful Features
+            Recursos Poderosos
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Experience the next level of automation with our cutting-edge features
+            Experimente o próximo nível de automação com nossos recursos avançados
           </p>
         </div>
 
@@ -61,6 +77,31 @@ export const Features = () => {
               <p className="text-muted-foreground">{feature.description}</p>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-20 glass-card p-8">
+          <h3 className="text-2xl font-bold mb-6 gradient-text text-center">
+            Checklist de Funcionalidades
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {[
+              "Suporte a 5 números simultâneos",
+              "Funcionamento ilimitado",
+              "Modo campanha com disparos em massa",
+              "Flows condicionais personalizáveis",
+              "Sistema de agendamento avançado",
+              "Gestão completa de funis",
+              "Backups automáticos",
+              "Interface com tema escuro",
+              "Respostas automáticas inteligentes",
+              "Métricas e relatórios detalhados"
+            ].map((item, index) => (
+              <div key={index} className="flex items-center gap-2 text-lg">
+                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
