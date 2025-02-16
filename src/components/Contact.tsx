@@ -26,17 +26,20 @@ export const Contact = () => {
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    const formData = new FormData()
+    formData.append('name', values.name)
+    formData.append('email', values.email)
+    formData.append('message', values.message)
+    formData.append('_subject', "Novo contato do site DarkVoice")
+    formData.append('_replyto', values.email)
+    formData.append('_template', 'table')
+    formData.append('_captcha', 'true')
+    formData.append('_autoresponse', 'Obrigado por entrar em contato! Retornaremos em breve.')
+
     toast.promise(
       fetch("https://formsubmit.co/darkvoiceeee@gmail.com", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          ...values,
-          _subject: "Novo contato do site DarkVoice",
-        }),
+        body: formData
       }).then((res) => {
         if (!res.ok) throw new Error("Erro ao enviar mensagem")
         return res
@@ -73,6 +76,9 @@ export const Contact = () => {
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input type="hidden" name="_subject" value="Novo contato do site DarkVoice" />
             <FormField
               control={form.control}
               name="name"
@@ -93,7 +99,7 @@ export const Contact = () => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Seu email" {...field} />
+                    <Input type="email" placeholder="Seu email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

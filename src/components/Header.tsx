@@ -8,10 +8,8 @@ export const Header = () => {
 
   const menuItems = [
     { title: "Recursos", to: "recursos" },
-    { title: "Demo", to: "demo" },
     { title: "Tutorial", to: "tutorial" },
     { title: "Preços", to: "precos" },
-    { title: "FAQ", to: "faq" },
     { title: "Contato", to: "contato" }
   ];
 
