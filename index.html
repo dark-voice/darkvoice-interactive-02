@@ -1,20 +1,134 @@
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DarkVoice - Automation Extension</title>
-    <meta name="description" content="Transform your workflow with DarkVoice automation extension" />
+    <meta name="description" content="Transform your workflow with DarkVoice automation extension">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <meta property="og:image" content="/og-image.png" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">DarkVoice</a>
+                <nav class="desktop-menu">
+                    <a href="#recursos">Recursos</a>
+                    <a href="#tutorial">Tutorial</a>
+                    <a href="#precos">Preços</a>
+                    <a href="#contato">Contato</a>
+                    <a href="#contato" class="cta-button">Começar Agora</a>
+                </nav>
+                <button class="mobile-menu-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="mobile-menu">
+                <a href="#recursos">Recursos</a>
+                <a href="#tutorial">Tutorial</a>
+                <a href="#precos">Preços</a>
+                <a href="#contato">Contato</a>
+                <a href="#contato" class="cta-button">Começar Agora</a>
+            </nav>
+        </div>
+    </header>
 
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="badge">
+                    <span>✨ Automação Inteligente</span>
+                </div>
+                <h1>Transforme seu Fluxo de Trabalho<br>com DarkVoice</h1>
+                <p>Automatize suas tarefas diárias com inteligência. Experimente o futuro da produtividade hoje.</p>
+                <div class="buttons">
+                    <button class="primary-button">Começar Agora</button>
+                    <button class="secondary-button">Ver Demo</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="recursos" class="features">
+            <div class="container">
+                <h2>Recursos Poderosos</h2>
+                <p>Experimente o próximo nível de automação com nossos recursos avançados</p>
+                <div class="features-grid">
+                    <!-- Features cards will be added dynamically via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contact">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <p>Tire suas dúvidas ou faça um orçamento personalizado</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="phone-icon"></i>
+                            <div>
+                                <p>+55 41 9503-0689</p>
+                                <p>(11) 99999-9999</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="mail-icon"></i>
+                            <p>darkvoiceeee@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <form id="contactForm" class="contact-form">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="true">
+                        <input type="hidden" name="_subject" value="Novo contato do site DarkVoice">
+                        
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Seu email" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" placeholder="Digite sua mensagem" required></textarea>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <button type="submit" class="submit-button">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DarkVoice</h3>
+                    <p>Automação inteligente para seu negócio</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DarkVoice. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
