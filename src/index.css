@@ -5,24 +5,24 @@
 
 @layer base {
   :root {
-    --background: 231 15% 18%;
-    --foreground: 250 20% 95%;
-    --card: 232 14% 13%;
-    --card-foreground: 250 20% 95%;
-    --popover: 232 14% 13%;
-    --popover-foreground: 250 20% 95%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 100%;
     --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
     --secondary: 263 67% 51%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 231 15% 28%;
-    --muted-foreground: 250 20% 85%;
-    --accent: 231 15% 28%;
-    --accent-foreground: 250 20% 95%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 231 15% 28%;
-    --input: 231 15% 28%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
     --ring: 262 83% 58%;
     --radius: 0.5rem;
   }
@@ -33,7 +33,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#1A1F2C] text-[#D6BCFA] font-sans antialiased;
+    @apply bg-black text-white font-sans antialiased;
   }
   html {
     @apply scroll-smooth;
@@ -41,7 +41,7 @@
 }
 
 .glass-card {
-  @apply backdrop-blur-md bg-white/5 border border-white/10 rounded-xl;
+  @apply backdrop-blur-md bg-white/5 border border-white/5 rounded-xl;
 }
 
 .gradient-text {
