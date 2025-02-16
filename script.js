@@ -1,4 +1,3 @@
-
 // Data
 const features = [
     {
@@ -125,13 +124,31 @@ const faqs = [
     }
 ];
 
+const testimonials = [
+  {
+    name: "João Silva",
+    role: "Empresário",
+    content: "Revolucionou completamente minha forma de trabalhar. Economizo horas todos os dias!",
+  },
+  {
+    name: "Maria Santos",
+    role: "Marketing Digital",
+    content: "O melhor investimento que fiz para minha agência. O suporte é incrível!",
+  },
+  {
+    name: "Pedro Costa",
+    role: "Vendedor",
+    content: "Aumentei minhas vendas em 300% com as automações. Simplesmente fantástico!",
+  },
+];
+
 // Utility Functions
 function createSVGIcon(name) {
     const icons = {
         users: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>',
         zap: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>',
         'message-square': '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>',
-        bot: '<path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path>',
+        bot: '<path d="M12 2L2 7l10 5 10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path>',
         calendar: '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>',
         shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>',
         moon: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>',
@@ -253,6 +270,49 @@ document.querySelectorAll('.accordion-header').forEach(header => {
         content.classList.toggle('active');
         icon.classList.toggle('active');
     });
+});
+
+// Initialize Testimonials
+const testimonialsGrid = document.querySelector('.testimonials-grid');
+testimonials.forEach(testimonial => {
+    const testimonialCard = document.createElement('div');
+    testimonialCard.className = 'testimonial-card fade-in';
+    testimonialCard.innerHTML = `
+        <div class="testimonial-icon">
+            ${createSVGIcon('message-square')}
+        </div>
+        <p class="testimonial-content">${testimonial.content}</p>
+        <div>
+            <p class="testimonial-author">${testimonial.name}</p>
+            <p class="testimonial-role">${testimonial.role}</p>
+        </div>
+    `;
+    testimonialsGrid.appendChild(testimonialCard);
+});
+
+// Initialize Features Checklist
+const checklistGrid = document.querySelector('.checklist-grid');
+const checklistItems = [
+    "Suporte a 5 números simultâneos",
+    "Funcionamento ilimitado",
+    "Modo campanha com disparos em massa",
+    "Flows condicionais personalizáveis",
+    "Sistema de agendamento avançado",
+    "Gestão completa de funis",
+    "Backups automáticos",
+    "Interface com tema escuro",
+    "Respostas automáticas inteligentes",
+    "Métricas e relatórios detalhados"
+];
+
+checklistItems.forEach(item => {
+    const checklistItem = document.createElement('div');
+    checklistItem.className = 'checklist-item';
+    checklistItem.innerHTML = `
+        ${createSVGIcon('check')}
+        <span>${item}</span>
+    `;
+    checklistGrid.appendChild(checklistItem);
 });
 
 // Contact Form
