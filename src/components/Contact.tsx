@@ -66,7 +66,10 @@ export const Contact = () => {
         <div className="space-y-6">
           <div className="flex items-center gap-4">
             <Phone className="h-6 w-6 text-primary" />
-            <p className="text-lg">+55 41 9503-0689</p>
+            <div className="space-y-1">
+              <p className="text-lg">+55 41 9503-0689</p>
+              <p className="text-lg">(11) 99999-9999</p>
+            </div>
           </div>
           <div className="flex items-center gap-4">
             <Mail className="h-6 w-6 text-primary" />
