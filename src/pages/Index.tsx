@@ -10,7 +10,7 @@ const Index = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-16">
       <motion.div
         style={{ opacity }}
         className="fixed inset-0 bg-gradient-to-b from-primary/20 to-transparent pointer-events-none"
